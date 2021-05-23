@@ -1,0 +1,14 @@
+.character-list-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .character-list-item {
+    margin: 20px;
+  }
+  
+  @media screen and (max-width: 680px) {
+    .character-list-item {
+      margin: 20px auto;
+    }}
