@@ -26,12 +26,12 @@ const useFavoriteCharacters = () => {
 
   const toggleFavorite = (character) => {
     const favoriteCharacter = favoriteCharacters.find(
-      (r) => r.urlFriendlyName === character.urlFriendlyName
+      (c) => c.urlFriendlyName === character.urlFriendlyName
     );
 
     if (favoriteCharacter) {
-      const newCharacters = favoriteCharacter.filter(
-        (r) => r.urlFriendlyName !== favoriteCharacter.urlFriendlyName
+      const newCharacters = favoriteCharacters.filter(
+        (c) => c.urlFriendlyName !== favoriteCharacter.urlFriendlyName
       );
       setFavoriteCharacters(newCharacters);
     } else {
@@ -42,7 +42,7 @@ const useFavoriteCharacters = () => {
 
   const isFavorite = (character) => {
     const favoriteCharacter = favoriteCharacters.find(
-      (r) => r.urlFriendlyName === character.urlFriendlyName
+      (c) => c.urlFriendlyName === character.urlFriendlyName
     );
     return !!favoriteCharacter;
   };

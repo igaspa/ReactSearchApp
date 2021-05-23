@@ -15,3 +15,6 @@
 .character-list-item-title {
   margin: 0;
 }
+.character-picture{
+  display: flex;
+}
