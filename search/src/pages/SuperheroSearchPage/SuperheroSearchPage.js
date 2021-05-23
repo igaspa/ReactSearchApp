@@ -1,32 +1,46 @@
-import './SuperheroSearchPage';
-import {useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import './SuperheroSearchPage.css';
 import Search from '../../components/Search/Search';
-import characterApi from '../../api/Character';
-import CharacterList from '../../features/CharacterList/CharacterList';
+import CharacterList from '../../features/character/CharacterList/CharacterList';
+import useFavoriteCharacters from '../../features/character/hooks/useFavoriteCharacters';
+import characterApi from '../../api/character';
 
-const SuperheroSearchPage = ()=>{
-    const [searchTerm, setSearchTerm] = useState('');
-    const [characters, setCharacters] = useState([]);
+const SuperheroSearchPage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [characters, setCharacters] = useState([]);
+  const {
+    favoriteCharacters,
+    isFavorite,
+    toggleFavorite,
+  } = useFavoriteCharacters();
 
-    const onSearch = (newSearchTerm) => setSearchTerm(newSearchTerm);
-  
-    useEffect(() => {
-      if (searchTerm) {
-        characterApi.searchCharacter(searchTerm).then((data) => {
-          setCharacters(data.data.results);
-        });
-      } else {
-        setCharacters();
-      }
-    }, [searchTerm]);
-  
-    return (
-        <div className="character-search-page-container">
-          <Search onChange={onSearch} />
-          <CharacterList
-          characters={characters}/>
-        </div>
-    );
-  };
+  const onSearch = (newSearchTerm) => setSearchTerm(newSearchTerm);
+
+  useEffect(() => {
+    if (searchTerm) {
+      characterApi.searchCharacters(searchTerm).then(({ data }) => {
+        setCharacters(data.data.results);
+      });
+    } else {
+      setCharacters([]);
+    }
+  }, [searchTerm]);
+  useEffect(() => {
+    if (!searchTerm) {
+      setCharacters(favoriteCharacters);
+    }
+  }, [favoriteCharacters, searchTerm]);
+
+  return (
+      <div className="character-search-page-container">
+        <Search onChange={onSearch} />
+        <CharacterList 
+        characters={characters}
+        isFavorite={isFavorite}
+          toggleFavorite={toggleFavorite}
+           />
+      </div>
+  );
+};
 
 export default SuperheroSearchPage;

@@ -6,10 +6,11 @@ const Search = ({ onChange }) => {
       <input
         className="search-input"
         type="text"
-        placeholder="Search..."
+        placeholder="Search"
         onChange={(e) => onChange(e.target.value)}
       />
     </div>
   );
 };
+
 export default Search;
