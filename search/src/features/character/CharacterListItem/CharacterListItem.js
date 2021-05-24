@@ -2,7 +2,8 @@ import './CharacterListItem.css';
 import Bookmark from '../../../components/Bookmark/Bookmark';
 
 const CharacterListItem = ({ character, className, toggleFavorite, isFavorite }) => {
-  const url = `${character.thumbnail.path}.jpg`;
+  const avatar = 'https://gravatar.com/avatar/486cec0e42cbe4504ad5ae93dd7ba922?s=200&d=mp&r=x';
+  const url = `${character.thumbnail.path}.jpg`? `${character.thumbnail.path}.jpg` : avatar;
   return (
     <div
       className={`character-item-container ${className}`}>

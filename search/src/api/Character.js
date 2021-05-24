@@ -3,6 +3,7 @@ import axios from 'axios';
 const characterApi = {
   searchCharacters: (searchTerm) => {
     const options = {
+        searchTerm: searchTerm ? searchTerm : 'a',
         ts: '1',
         apiKey: '49e91c859fc5b22318a1be0560f917b0',
         hash: 'af55b4065aabc103224573f4e4c603ef'
