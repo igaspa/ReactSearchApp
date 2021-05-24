@@ -1,0 +1,11 @@
+.bookmark-container {
+  width: 13px;
+  height: 13px;
+  background: white;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.bookmark-red {
+  background: red;
+}
