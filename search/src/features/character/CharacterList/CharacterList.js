@@ -6,7 +6,7 @@ const CharacterList = ({ characters, isFavorite, toggleFavorite }) => {
     <div className="character-list">
       {characters.map((character) => (
         <CharacterListItem
-          key={character.urlFriendlyName}
+          key={character.id}
           character={character}
           className="character-item-container"
           isFavorite={isFavorite}
