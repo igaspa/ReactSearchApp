@@ -3,7 +3,7 @@ import './SuperheroSearchPage.css';
 import Search from '../../components/Search/Search';
 import CharacterList from '../../features/character/CharacterList/CharacterList';
 import useFavoriteCharacters from '../../features/character/hooks/useFavoriteCharacters';
-import characterApi from '../../api/character';
+import characterApi from '../../api/Character';
 
 const SuperheroSearchPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,6 +25,7 @@ const SuperheroSearchPage = () => {
       setCharacters([]);
     }
   }, [searchTerm]);
+
   useEffect(() => {
     if (!searchTerm) {
       setCharacters(favCharacters);
@@ -37,7 +38,7 @@ const SuperheroSearchPage = () => {
         <CharacterList 
         characters={characters}
         isFavorite={isFavorite}
-          toggleFavorite={toggleFavorite}
+        toggleFavorite={toggleFavorite}
            />
       </div>
   );

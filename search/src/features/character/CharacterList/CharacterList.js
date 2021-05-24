@@ -8,7 +8,7 @@ const CharacterList = ({ characters, isFavorite, toggleFavorite }) => {
         <CharacterListItem
           key={character.urlFriendlyName}
           character={character}
-          className="character-item"
+          className="character-item-container"
           isFavorite={isFavorite}
           toggleFavorite={toggleFavorite}
         />

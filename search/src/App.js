@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="layout">
+    <div className="start-app">
       <SuperheroSearchPage />
     </div>
   );

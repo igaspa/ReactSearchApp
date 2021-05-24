@@ -8,6 +8,7 @@ const getFavorite = () => {
   if (!characters) {
     return [];
   }
+  else
   return characters;
 };
 
