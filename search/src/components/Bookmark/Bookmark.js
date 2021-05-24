@@ -4,7 +4,7 @@ const Bookmark = ({ isActive, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className={`bookmark-container ${isActive ? 'bookmark-red': ''}`}
+      className={`bookmark-container ${isActive ? 'bookmark-red' : ''}`}
     />
   );
 };

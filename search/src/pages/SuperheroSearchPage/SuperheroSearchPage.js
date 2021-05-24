@@ -33,14 +33,14 @@ const SuperheroSearchPage = () => {
   }, [favCharacters, searchTerm]);
 
   return (
-      <div className="character-search-page-container">
-        <Search onChange={onSearch} />
-        <CharacterList 
+    <div className="character-search-page-container">
+      <Search onChange={onSearch} />
+      <CharacterList
         characters={characters}
         isFavorite={isFavorite}
         toggleFavorite={toggleFavorite}
-           />
-      </div>
+      />
+    </div>
   );
 };
 

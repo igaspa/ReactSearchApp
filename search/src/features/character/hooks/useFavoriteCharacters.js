@@ -4,12 +4,12 @@ import * as storage from '../../../storage/storage';
 const FAVORITE_CHARACTERS_KEY = 'marvel:favorite:characters';
 
 const getFavorite = () => {
-  const characters= storage.get(FAVORITE_CHARACTERS_KEY);
+  const characters = storage.get(FAVORITE_CHARACTERS_KEY);
   if (!characters) {
     return [];
   }
   else
-  return characters;
+    return characters;
 };
 
 const saveFavorite = (characters) => {
