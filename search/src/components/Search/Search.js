@@ -2,7 +2,7 @@ import './Search.css';
 
 const Search = ({ onChange }) => {
   return (
-    <div className="search-container">
+    <div className="search-form">
       <input
         className="search-input"
         type="text"

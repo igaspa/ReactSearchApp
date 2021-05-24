@@ -1,12 +1,11 @@
-.indicator-container {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
+.bookmark-container {
+  width: 13px;
+  height: 13px;
   background: white;
   cursor: pointer;
   display: inline-block;
 }
 
-.indicator-yellow {
-  background: yellow;
+.bookmark-red {
+  background: red;
 }

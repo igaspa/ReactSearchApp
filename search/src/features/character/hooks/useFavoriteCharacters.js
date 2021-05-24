@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import * as storage from '../../../services/storage';
+import * as storage from '../../../storage/storage';
 
 const FAVORITE_CHARACTERS_KEY = 'marvel:favorite:characters';
 
 const getFavorite = () => {
-  const characters = storage.get(FAVORITE_CHARACTERS_KEY);
+  const characters= storage.get(FAVORITE_CHARACTERS_KEY);
   if (!characters) {
     return [];
   }
@@ -16,39 +16,39 @@ const saveFavorite = (characters) => {
 };
 
 const useFavoriteCharacters = () => {
-  const [favoriteCharacters,  setFavoriteCharacters] = useState(getFavorite());
+  const [favCharacters, setFavCharacters] = useState(getFavorite());
 
   useEffect(() => {
-    if (favoriteCharacters) {
-      saveFavorite(favoriteCharacters);
+    if (favCharacters) {
+      saveFavorite(favCharacters);
     }
-  }, [favoriteCharacters]);
+  }, [favCharacters]);
 
   const toggleFavorite = (character) => {
-    const favoriteCharacter = favoriteCharacters.find(
+    const favCharacter = favCharacters.find(
       (c) => c.urlFriendlyName === character.urlFriendlyName
     );
 
-    if (favoriteCharacter) {
-      const newCharacters = favoriteCharacters.filter(
-        (c) => c.urlFriendlyName !== favoriteCharacter.urlFriendlyName
+    if (favCharacter) {
+      const newCharacters = favCharacters.filter(
+        (c) => c.urlFriendlyName !== favCharacter.urlFriendlyName
       );
-      setFavoriteCharacters(newCharacters);
+      setFavCharacters(newCharacters);
     } else {
-      const newCharacters = [...favoriteCharacters, character];
-      setFavoriteCharacters(newCharacters);
+      const newCharacters = [...favCharacters, character];
+      setFavCharacters(newCharacters);
     }
   };
 
   const isFavorite = (character) => {
-    const favoriteCharacter = favoriteCharacters.find(
+    const favCharacter = favCharacters.find(
       (c) => c.urlFriendlyName === character.urlFriendlyName
     );
-    return !!favoriteCharacter;
+    return !!favCharacter;
   };
 
   return {
-    favoriteCharacters,
+    favCharacters,
     isFavorite,
     toggleFavorite,
   };

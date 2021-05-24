@@ -9,7 +9,7 @@ const SuperheroSearchPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [characters, setCharacters] = useState([]);
   const {
-    favoriteCharacters,
+    favCharacters,
     isFavorite,
     toggleFavorite,
   } = useFavoriteCharacters();
@@ -27,9 +27,9 @@ const SuperheroSearchPage = () => {
   }, [searchTerm]);
   useEffect(() => {
     if (!searchTerm) {
-      setCharacters(favoriteCharacters);
+      setCharacters(favCharacters);
     }
-  }, [favoriteCharacters, searchTerm]);
+  }, [favCharacters, searchTerm]);
 
   return (
       <div className="character-search-page-container">
