@@ -1,18 +1,29 @@
-# ReactSearchApp
-Installing and using app: 
+# Marvel searching app 
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Installing and using app: 
 
 1. Clone repository
 
-     $ git clone "url"
+```
+$ git clone "url"
+```
   
 2. Change directory to search 
-  
-     $ cd search
+ 
+ ```
+$ cd search
+```
 
 3. Install npm
-  
-     $ npm install
+
+```
+$ npm install
+```
  
 4. Start the application
-  
-    $ npm start  
+
+ ```
+$ npm start
+```
