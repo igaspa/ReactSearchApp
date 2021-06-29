@@ -1,5 +1,5 @@
 # ReactSearchApp
-#Installing and using app: 
+Installing and using app: 
 
 1. Clone repository
 
