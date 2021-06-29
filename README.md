@@ -27,3 +27,10 @@ $ npm install
  ```
 $ npm start
 ```
+### Features 
+
+- user can search through marvel characters
+
+- search result can be bookmarked 
+
+- bookmarked characters are saved and displayed while search is empty
